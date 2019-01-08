@@ -22,6 +22,10 @@ COPY config/core.ini \
     config/realpath.ini \
     /usr/local/etc/php/conf.d/
 
+COPY --from=gaiaz/php-tools:7.2-alpine \
+    /composer \
+    /usr/local/bin/
+
 RUN addgroup -g 1000 docker \
     && adduser -u 1000 -G docker -h /home/docker -s /bin/sh -D docker
 
