@@ -5,6 +5,16 @@
 
 :whale: [Alpine](https://alpinelinux.org/) Linux based [Docker](https://www.docker.com/) Image for [Symfony](https://symfony.com/) applications.
 
+## Extensions
+
+- [APCu](https://pecl.php.net/package/APCu)
+- Intl
+- OPcache
+
+## Tools
+
+- [Composer](https://getcomposer.org/) - Dependency Manager for PHP
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © [Gaiaz Iusipov](https://github.com/gaiaz-iusipov)
