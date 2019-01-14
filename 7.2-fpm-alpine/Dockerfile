@@ -29,4 +29,7 @@ COPY --from=gaiaz/php-tools:7.2-alpine \
 RUN addgroup -g 1000 docker \
     && adduser -u 1000 -G docker -h /home/docker -s /bin/sh -D docker
 
+RUN mkdir /app \
+    && chown docker /app
+
 WORKDIR /app
