@@ -40,3 +40,7 @@ RUN mkdir /app \
     && chown docker /app
 
 WORKDIR /app
+
+ARG APP_ENV=prod
+
+ENV APP_ENV $APP_ENV
