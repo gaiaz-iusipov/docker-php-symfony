@@ -15,6 +15,19 @@
 
 - [Composer](https://getcomposer.org/) - Dependency Manager for PHP
 
+## Usage
+
+```dockerfile
+FROM gaiaz/php-symfony:7.2-fpm-alpine
+
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+    && rm "$PHP_INI_DIR/php.ini-development
+
+# or development configuration
+# RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
+#     && rm "$PHP_INI_DIR/php.ini-production"
+```
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © [Gaiaz Iusipov](https://github.com/gaiaz-iusipov)
