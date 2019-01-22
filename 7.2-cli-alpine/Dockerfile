@@ -17,10 +17,17 @@ RUN set -xe \
     && docker-php-ext-enable \
         intl
 
-COPY config/core.ini \
-    config/opcache.ini \
-    config/realpath.ini \
-    /usr/local/etc/php/conf.d/
+RUN set -xe \
+    && sed --in-place \
+            "$PHP_INI_DIR/php.ini-production" \
+            "$PHP_INI_DIR/php.ini-development" \
+        --expression 's/^;\(opcache\.memory_consumption\).*/\1 = 256/' \
+        --expression 's/^;\(opcache\.max_accelerated_files\).*/\1 = 20000/' \
+        --expression '/^;realpath_cache_size.*/s/^;//' \
+        --expression 's/^;\(realpath_cache_ttl\).*/\1 = 600/' \
+    && sed --in-place \
+           "$PHP_INI_DIR/php.ini-production" \
+       --expression 's/^;\(opcache\.validate_timestamps\).*/\1 = 0/'
 
 COPY --from=gaiaz/php-tools:7.2-alpine \
     /composer \
