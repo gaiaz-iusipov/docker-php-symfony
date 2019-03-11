@@ -1,6 +1,7 @@
 # docker-php-symfony
 
 [![GitHub](https://img.shields.io/github/license/gaiaz-iusipov/docker-php-symfony.svg)](https://github.com/gaiaz-iusipov/docker-php-symfony#license)
+[![Docker Pulls](https://img.shields.io/docker/pulls/gaiaz/php-symfony.svg)](https://hub.docker.com/r/gaiaz/php-symfony/)
 
 :whale: [Alpine](https://alpinelinux.org/) Linux based [Docker](https://www.docker.com/) Image for [Symfony](https://symfony.com/) applications.
 
