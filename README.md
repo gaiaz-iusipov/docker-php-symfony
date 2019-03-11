@@ -18,7 +18,7 @@
 ## Usage
 
 ```dockerfile
-FROM gaiaz/php-symfony:7.2-fpm-alpine
+FROM gaiaz/php-symfony:7.3-fpm-alpine
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     && rm "$PHP_INI_DIR/php.ini-development
