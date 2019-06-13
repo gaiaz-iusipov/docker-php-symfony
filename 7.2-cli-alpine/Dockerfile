@@ -33,10 +33,12 @@ COPY --from=gaiaz/php-tools:7.2-alpine \
     /composer \
     /usr/local/bin/
 
-RUN addgroup -g 1000 docker \
-    && adduser -u 1000 -G docker -h /home/docker -s /bin/sh -D docker
-
-RUN mkdir /app \
-    && chown docker /app
+RUN set -xe \
+    && deluser --remove-home www-data \
+    && addgroup -g 1000 app \
+    && adduser -u 1000 -G app -h /home/app -s /bin/sh -D app \
+    && rm -r /var/www \
+    && mkdir /app \
+    && chown app /app
 
 WORKDIR /app
